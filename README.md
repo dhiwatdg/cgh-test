@@ -85,11 +85,11 @@ off-axis hologram encoded with bipolar intensity scheme, and its real image
 reconstruction.
 
 
-![](example_output/layered-fig1.png)
+![](example_output/layered-fig1.png)  
 *The scene and its reconstruction from a hologram*
 
 
-![](example_output/layered-fig2.png)
+![](example_output/layered-fig2.png)  
 *The calculated hologram*
 
 
