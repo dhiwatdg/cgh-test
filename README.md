@@ -104,9 +104,9 @@ in that order. The core functionality is in the folder `cgdhtools`.
   first as they directly show the calculations. In the other demos, most 
   calculations are "hidden" in the functions of CGDH Tolls.
 
-* `02_simple_digital_hologram`  
-  The basic usage of CGDH Tools. The demo is as short as possible. It is highly
-  recommended to explore this demo first.
+* `02_simple_examples`  
+  The basic usage of CGDH Tools. The demos are as short as possible. 
+  It is highly recommended to explore these demos first.
 
 * `03_demo_basic_functions`  
   Computational Fourier optics uses many special complex valued functions. This

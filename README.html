@@ -39,7 +39,7 @@ img {
   padding-bottom: 2em;
 }
 
-img + em { 
+img + br + em { 
   display: block; 
   text-align: center; 
   margin-top: -3em; 
@@ -50,7 +50,6 @@ img + em {
   padding-top: 0em;
 }
 </style>
-
 </head>
 <body>
 <div class="content">
@@ -113,10 +112,8 @@ holography.</p>
 image of a layered scene (stack of three parallel billboards), their
 off-axis hologram encoded with bipolar intensity scheme, and its real image
 reconstruction.</p>
-<p><img src="example_output/layered-fig1.png" alt="">
-<em>The scene and its reconstruction from a hologram</em></p>
-<p><img src="example_output/layered-fig2.png" alt="">
-<em>The calculated hologram</em></p>
+<p><img src="example_output/layered-fig1.png" alt=""><br><em>The scene and its reconstruction from a hologram</em></p>
+<p><img src="example_output/layered-fig2.png" alt=""><br><em>The calculated hologram</em></p>
 <h2 id="structure">Structure</h2>
 <p>The demos are located in the numbered folders. It is recommended to explore them
 in that order. The core functionality is in the folder <code>cgdhtools</code>.</p>
@@ -125,8 +122,8 @@ in that order. The core functionality is in the folder <code>cgdhtools</code>.</
 have little experience with computational Fourier optics should explore them
 first as they directly show the calculations. In the other demos, most 
 calculations are &quot;hidden&quot; in the functions of CGDH Tolls.</p>
-</li><li><p><code>02_simple_digital_hologram</code><br>The basic usage of CGDH Tools. The demo is as short as possible. It is highly
-recommended to explore this demo first.</p>
+</li><li><p><code>02_simple_examples</code><br>The basic usage of CGDH Tools. The demos are as short as possible. 
+It is highly recommended to explore these demos first.</p>
 </li><li><p><code>03_demo_basic_functions</code><br>Computational Fourier optics uses many special complex valued functions. This
 demo allows to explore them. It is quite safe to skip this demo if you are
 not interested in calculation details.</p>
@@ -154,8 +151,7 @@ compensated phase added stereogram - ACPAS).</p>
 </li><li><p><code>example_output</code><br>The images that were referenced in the section Example output.</p>
 </li><li><p><code>images</code><br>Some input images that are used in the demos.</p>
 </li></ul>
-</div>
-</div>
+
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
