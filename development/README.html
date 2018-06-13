@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body {
+  background: #a0a0a0;
+  font-size: 120%;
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  background: #ffffff;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3em;
+  padding-top: 3em;
+  font-family: "Source Sans Pro",sans-serif; 
+}
+
+.text {
+  padding: 0 3em 0 3em;
+  line-height: 160%;
+}
+
+p {
+	margin-top: 0em;
+	margin-bottom: 0.8em;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<div class="text">
+<h1 id="cgdh-tools-development-utilities">CGDH Tools development utilities</h1>
+<p>This folder contains handy utilities for development.
+You do not need to bother with them if you just want to use CGDH Tools. </p>
+<ul>
+<li><p>The main folder contains two batch files for Octave -&gt; Scilab conversion:</p>
+<ul>
+<li><p><code>m2sce.cmd</code> for conversion from <code>.m</code> to <code>.sce</code></p>
+</li><li><p><code>m2sci.cmd</code> for conversion from <code>.m</code> to <code>.sci</code></p>
+</li></ul>
+<p>(They are essentially the same, only the suffix is different.)</p>
+<p>Both batches are plain SED (<a href="https://www.gnu.org/software/sed/">https://www.gnu.org/software/sed/</a>) text 
+replacements. Note that the batch files DO NOT convert arbitrary Octave/MATLAB
+code to the Scilab syntax. The original CGDH Tools <code>.m</code> files are written in 
+such a way it is possible to do the conversion using simple replacements 
+such as &quot;%&quot; to &quot;//&quot; for comments.</p>
+<p>The program sed.exe should be located in the search path or in the local 
+subfolder <code>sed</code>. You can use Gnuwin32 version 
+(<a href="http://gnuwin32.sourceforge.net/packages/sed.htm">http://gnuwin32.sourceforge.net/packages/sed.htm</a>). The only files that need 
+to be located there are <code>libiconv-2.dll</code>, <code>libiconv2.dll</code>, <code>libintl3.dll</code>,
+<code>regex2.dll</code>, <code>sed.exe</code>.</p>
+</li><li><p>The folder <code>sed</code> can contain local copy of the sed editor as described in the 
+previous paragraph.</p>
+</li><li><p>The folder <code>tests</code> contains a few unit tests and sets scripts.
+Currntly they just cover a few critical cases.</p>
+</li><li><p>The folder <code>testUtils</code> contains utility functions for testing.</p>
+</li></ul>
+</div>
+</div>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
