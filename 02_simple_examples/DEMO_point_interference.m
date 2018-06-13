@@ -27,15 +27,18 @@
 %
 % ALL DIMENSIONS ARE IN METRES
 %
-
 addpath(genpath('../cgdhtools'));
+
+% Scilab compatibility
+imagUnit = sqrt(-1);
+piNumber = pi;
 
 % Wavelength, a green DPSS laser
 lambda = 532e-9;
 
 % Prepare the object - point sources
 N = 8;
-t = ((0:N-1)/N * 2*pi)';
+t = ((0:N-1)/N * 2*piNumber)';
 points = [cos(t), sin(t), zeros(N, 1)] * 10e-6;
 pointAmplitudes = ones(1, size(points, 1));
 
