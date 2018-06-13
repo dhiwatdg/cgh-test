@@ -1,0 +1,94 @@
+% Calculates a convolution kernel in the frequency domain.
+%
+% Inputs:
+% kernelType 
+%  - type of the kernel, can be:
+%    'AngularSpectrumExact'        - FT of the exact Rayleigh-Sommerfeld kernel
+%    'AngularSpectrumNoEvanescent' - like AngularSpectrumExact without evanescent waves
+%    'FresnelFXFY'                 - Fresnel kernel in the frequency domain
+%  - see cgdhFunct.m for implementation details
+% filterType 
+%  - Local frequency (lx, ly) filtering, can be:
+%    'localExact' - sample is rejected if lx, ly > sampling limit
+%    'localRect'  - sample is rejected if fx, fy is outside estimated safe area
+%    'none'       - no filtering
+% sourceSize 
+%  - Size of the source matrix, i.e. the vector [rows, columns].
+% kernelSize 
+%  - Desired size of the kernel, i.e. the vector [rows, columns].
+% sourceMin  
+%  - 3-D vector [x, y, z] of the lower left corner of the source.
+% targetMin  
+%  - 3-D vectir [x, y, z] of the lower left corner of the target.
+% deltaYX    
+%  - 2-D vector [deltaY, deltaX] with sampling periods in x and y.
+% lambda
+%  - The wavelength.
+%
+% Outputs:
+% kernel
+%  - Complex matrix with the convolution kernel in the freq. domain.
+% fx, fy
+%  - Vectors of kernel's fx and fy coordinates.
+%    (useful for drawing - e.g. imagesc(fx, fy, real(kernel))
+%
+% NOTES:
+% !!!!!! Remember to use genfftshiftPre(kernel, m, n) before use!
+%
+% ---------------------------------------------
+%
+%  CGDH TOOLS
+%  Petr Lobaz, lobaz@kiv.zcu.cz
+%  Faculty of Applied Sciences, University of West Bohemia 
+%  Pilsen, Czech Republic
+%
+%  Check http://holo.zcu.cz for more details and scripts.
+%
+% ---------------------------------------------
+function [kernel, fx, fy] = ...
+  kernelFXFY(kernelType, filterType, ...
+           sourceSize, kernelSize, sourceMin, targetMin, deltaYX, lambda)
+
+  % Scilab compatibility
+  imagUnit = sqrt(-1);
+  piNumber = pi;
+
+  % get source and theoretical target dimensions
+  m = sourceSize(2);
+  n = sourceSize(1);
+  p = kernelSize(2) - m + 1;
+  q = kernelSize(1) - n + 1;
+  
+  % get shift vector between source and target
+  px = targetMin(1) - sourceMin(1);
+  py = targetMin(2) - sourceMin(2);
+  z0 = targetMin(3) - sourceMin(3);
+
+  % prepare coordinates
+  k = 2*piNumber/lambda;
+  deltaFX = 1/(kernelSize(2) * deltaYX(2));
+  deltaFY = 1/(kernelSize(1) * deltaYX(1));
+  fx = (1-m:p-1) * deltaFX;
+  fy = (1-n:q-1) * deltaFY;
+  [fxx, fyy] = meshgrid(fx, fy);
+  limitFX = 0.5/deltaFX;
+  limitFY = 0.5/deltaFY;
+  
+  switch (filterType)
+    case 'localExact'
+      [kernel, lfxRange, lfyRange, lfx, lfy] = ...
+        cgdhFunct(kernelType, fxx, fyy, [lambda, z0, px, py], [limitFY, limitFX]);
+      kernel = kernel .* (lfx < limitFX) .* (lfy < limitFY);
+    case 'localRect'
+      [kernel, lfxRange, lfyRange] = ...
+        cgdhFunct(kernelType, fxx, fyy, [lambda, z0, px, py], [limitFY, limitFX]);
+      kernel(fxx < lfxRange(1)) = 0;
+      kernel(fxx > lfxRange(2)) = 0;
+      kernel(fyy < lfyRange(1)) = 0;
+      kernel(fyy > lfyRange(2)) = 0;
+    case 'none'
+      kernel = cgdhFunct(kernelType, fxx, fyy, [lambda, z0, px, py], [limitFY, limitFX]);
+    otherwise
+      error(sprintf('kernelFXFY: unknown filterType ""%s""', filterType));
+  end
+end
