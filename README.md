@@ -24,6 +24,20 @@ Faculty of Applied Sciences
 Pilsen, Czech Republic  
 http://holo.zcu.cz
 
+CGDH Tools were officialy introduced at the conference 
+"11th International Symposium on Display Holography (ISDH 2018)".
+Preprint of the conference article can be downloaded 
+[here](http://holo.zcu.cz/download/Lobaz-ISDH2018_CGDH_Tools.pdf).
+If you want to cite CGDH Tools in your publications, please cite:
+
+> Lobaz, P. "CGDH Tools: Getting started in computer generated
+> display holography." 
+> In: _Proceedings of the 11th International Symposium on Display Holography_. 
+> In press. 2018
+
+Check also [holo.zcu.cz](http://holo.zcu.cz) for more information on computer 
+generated display holography.
+
 
 ## Requirements
 
