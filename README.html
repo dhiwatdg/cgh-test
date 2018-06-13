@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body {
+  background: #a0a0a0;
+  font-size: 120%;
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  background: #ffffff;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3em;
+  font-family: "Source Sans Pro",sans-serif; 
+}
+
+.text {
+  padding: 0 3em 0 3em;
+  line-height: 160%;
+}
+
+p {
+	margin-top: 0em;
+	margin-bottom: 0.8em;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; 
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+img + em { 
+  display: block; 
+  text-align: center; 
+  margin-top: -3em; 
+  padding-bottom: 2em;
+} 
+
+.content > p > img {
+  padding-top: 0em;
+}
+</style>
+
+</head>
+<body>
+<div class="content">
+<p><img src="example_output/DEMO_hologram_projection_H.jpg" alt=""></p>
+<div class="text">
+<h1 id="cgdh-tools">CGDH Tools</h1>
+<p>Computer generated display holography (CGDH) tools is a set of 
+Octave/MATLAB/Scilab functions and demos. They show basic procedures in CGDH 
+and computational Fourier optics.</p>
+<p>The code is mainly <strong>educational</strong>. Those who want to understand computer 
+generated display holography are encouraged to read the code of the demos
+and the CGDH core functions. The code tries to be as simple and readable as 
+possible. Thus, it does not contain optimizations that would obfuscate 
+principles; the only exception is that the code tries to use matrix operations
+whenever possible as Octave/MATLAB/Scilab is optimized for matrices. 
+Anyone who needs high performance should adjust or rewrite the scripts
+according to particular needs.</p>
+<p>The code is published under 
+<a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a>.</p>
+<p>Copyright © 2018 University of West Bohemia<br>Petr Lobaz, lobaz@kiv.zcu.cz<br>Faculty of Applied Sciences<br>Pilsen, Czech Republic<br><a href="http://holo.zcu.cz">http://holo.zcu.cz</a></p>
+<h2 id="requirements">Requirements</h2>
+<p>The main development platform is Octave (<a href="https://www.gnu.org/software/octave/">https://www.gnu.org/software/octave/</a>). 
+The code (.m files) is fully compatible with MATLAB. The code is also 
+provided in Scilab syntax (.sci and .sce files). </p>
+<p>The Octave code was developed in version 4.x. It was tested in version 4.4. 
+Version 4.2 should work fine.</p>
+<p>The code was tested in MATLAB R2017a. It should work with most MATLAB versions.</p>
+<p>The Scilab code was tested in version 6.0.1 (<a href="https://www.scilab.org/">https://www.scilab.org/</a>).
+It <strong>requires</strong> module IPCV 1.2 (Image Processing and Computer Vision 
+Toolbox for Scilab, <a href="http://atoms.scilab.org/toolboxes/IPCV/1.2">http://atoms.scilab.org/toolboxes/IPCV/1.2</a>, 
+<a href="http://scilabipcv.tritytech.com">http://scilabipcv.tritytech.com</a>) for image loading and saving. </p>
+<h2 id="features">Features</h2>
+<p>CGDH Tools is built around demos. Currently available are:</p>
+<ul>
+<li><p>Propagation of light between parallel planes. Implemented methods are:</p>
+<ul>
+<li>convolution in the spatial domain (Rayleigh-Sommerfeld, Fresnel, etc.),</li><li>convolution in the frequency domain (angular spectrum, Fresnel, etc.),</li><li>Fourier transform based (Fresnel, Fraunhofer).</li></ul>
+</li><li><p>Simulation of a simple digital hologram recording and its reconstruction.
+Provided demos show hologram of an image and of a simple point cloud. 
+They also simulate a real image reconstruction as well as a photographing
+of a reconstructed virtual image.<br>The demos also show various hologram recording setups (on-axis, off-axis,
+lensless Fourier), hologram encoding methods (interference based, bipolar
+intensity, kinoform, etc.) and hologram manipulation (bleaching, 
+binarization).  </p>
+</li><li><p>Calculation of a &quot;layered hologram&quot;. A 3-D scene is decomposed to a set
+of parallel layers (billboards). The calculation solves hidden surface
+elimination.</p>
+</li><li><p>Hologram of a point cloud using a naive method and using a wavefront recording
+plane.</p>
+</li><li><p>Holographic stereogram of a point cloud. The demo allows to compare various
+approaches (basic, phase added stereogram - PAS, compensated phase added
+stereogram - CPAS, accurate phase added stereogram - APAS, accurate 
+compensated phase added stereogram - ACPAS).</p>
+</li><li><p>In addition, there are three self-contained demos (they do not use CGDH Tools
+functionality) that show basic procedures in computer generated display 
+holography.</p>
+</li></ul>
+<h2 id="example-output">Example output</h2>
+<p>Following images were calculated using Octave 4.4.0. They show a geometrical
+image of a layered scene (stack of three parallel billboards), their
+off-axis hologram encoded with bipolar intensity scheme, and its real image
+reconstruction.</p>
+<p><img src="example_output/layered-fig1.png" alt="">
+<em>The scene and its reconstruction from a hologram</em></p>
+<p><img src="example_output/layered-fig2.png" alt="">
+<em>The calculated hologram</em></p>
+<h2 id="structure">Structure</h2>
+<p>The demos are located in the numbered folders. It is recommended to explore them
+in that order. The core functionality is in the folder <code>cgdhtools</code>.</p>
+<ul>
+<li><p><code>01_standalone_demos</code><br>Three standalone demos that do not use CGDH Tools functionality. Those that
+have little experience with computational Fourier optics should explore them
+first as they directly show the calculations. In the other demos, most 
+calculations are &quot;hidden&quot; in the functions of CGDH Tolls.</p>
+</li><li><p><code>02_simple_digital_hologram</code><br>The basic usage of CGDH Tools. The demo is as short as possible. It is highly
+recommended to explore this demo first.</p>
+</li><li><p><code>03_demo_basic_functions</code><br>Computational Fourier optics uses many special complex valued functions. This
+demo allows to explore them. It is quite safe to skip this demo if you are
+not interested in calculation details.</p>
+</li><li><p><code>04_demo_propagation</code><br>Examples of light propagation between parallel planes. As light propagation 
+simulation is an ubiquitous part of computational Fourier optics and
+computational holography, it is highly recommended to explore these demos.</p>
+</li><li><p><code>05_demo_digital_hologram</code><br>Simulation of recording a digital hologram of a flat image and of a simple 
+point cloud. The demos show how to reconstruct a real image and how to take
+a photograph of a virtual image. Moreover, it is possible to compare
+various hologram recording setups (on-axis, off-axis, lensless Fourier), 
+hologram encoding methods (classical interference based, bipolar intensity,
+kinoform, etc.) and hologram processing (binarization, bleaching). Finally, 
+there is a demo that calculates a diffractive optical element (DOE) that 
+projects an image to a specified distance.  </p>
+</li><li><p><code>06_demo_layered_hologram</code><br>Hologram of a layered scene (scene decomposed to a stack of parallel 
+billboards). The demo shows the simplest method how to handle visibility. </p>
+</li><li><p><code>07_demo_hologramPointCloud</code><br>Hologram of a point cloud. The demo allows to compare speed of the naive 
+calculation and the calculation using a wavefront recording plane. </p>
+</li><li><p><code>08_demo_stereogram</code><br>Calculation of a holographic stereogram. The demo allows to compare various
+approaches (basic, phase added stereogram - PAS, compensated phase added
+stereogram - CPAS, accurate phase added stereogram - APAS, accurate 
+compensated phase added stereogram - ACPAS).</p>
+</li><li><p><code>cgdhtools</code><br>The core functionality.</p>
+</li><li><p><code>development</code><br>Utilities used in CGDH Tools development </p>
+</li><li><p><code>example_output</code><br>The images that were referenced in the section Example output.</p>
+</li><li><p><code>images</code><br>Some input images that are used in the demos.</p>
+</li></ul>
+</div>
+</div>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
