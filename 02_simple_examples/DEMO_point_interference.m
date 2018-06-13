@@ -28,7 +28,7 @@
 % ALL DIMENSIONS ARE IN METRES
 %
 
-addpath(genpath('../../cgdhtools'));
+addpath(genpath('../cgdhtools'));
 
 % Wavelength, a green DPSS laser
 lambda = 532e-9;
