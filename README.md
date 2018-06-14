@@ -35,8 +35,8 @@ If you want to cite CGDH Tools in your publications, please cite:
 > In: _Proceedings of the 11th International Symposium on Display Holography_. 
 > In press. 2018
 
-Check also [holo.zcu.cz](http://holo.zcu.cz/cgdh_basics) for more information on computer 
-generated display holography.
+Check also [holo.zcu.cz](http://holo.zcu.cz/cgdh_basics.html) for more 
+information on computer generated display holography.
 
 
 ## Requirements
