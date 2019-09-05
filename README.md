@@ -166,4 +166,4 @@ in that order. The core functionality is in the folder `cgdhtools`.
   The images that were referenced in the section Example output.
   
 * `images`  
-  Some input images that are used in the demos.
+  Some input images that are used in the demos. 
