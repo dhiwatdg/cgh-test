@@ -45,8 +45,8 @@ The main development platform is Octave (https://www.gnu.org/software/octave/).
 The code (.m files) is fully compatible with MATLAB. The code is also 
 provided in Scilab syntax (.sci and .sce files). 
 
-The Octave code was developed in version 4.x. It was tested in version 4.4. 
-Version 4.2 should work fine.
+The Octave code was developed in version 4.x. It was thoroughly tested in version 4.4. 
+Version 4.2 should work fine. Version 5.X works fine a well.
 
 The code was tested in MATLAB R2017a. It should work with most MATLAB versions.
 
