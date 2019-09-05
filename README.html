@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>readme</title>
+<title>README</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style>
+<style type="text/css">
 body {
   background: #a0a0a0;
   font-size: 120%;
@@ -55,7 +55,7 @@ img + br + em {
 <div class="content">
 <p><img src="example_output/DEMO_hologram_projection_H.jpg" alt=""></p>
 <div class="text">
-<h1 id="cgdh-tools">CGDH Tools</h1>
+<h1>CGDH Tools</h1>
 <p>Computer generated display holography (CGDH) tools is a set of 
 Octave/MATLAB/Scilab functions and demos. They show basic procedures in CGDH 
 and computational Fourier optics.</p>
@@ -69,7 +69,11 @@ Anyone who needs high performance should adjust or rewrite the scripts
 according to particular needs.</p>
 <p>The code is published under 
 <a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a>.</p>
-<p>Copyright © 2018 University of West Bohemia<br>Petr Lobaz, lobaz@kiv.zcu.cz<br>Faculty of Applied Sciences<br>Pilsen, Czech Republic<br><a href="http://holo.zcu.cz">http://holo.zcu.cz</a></p>
+<p>Copyright © 2018 University of West Bohemia<br />
+Petr Lobaz, lobaz@kiv.zcu.cz<br />
+Faculty of Applied Sciences<br />
+Pilsen, Czech Republic<br />
+http://holo.zcu.cz</p>
 <p>CGDH Tools were officialy introduced at the conference 
 &quot;11th International Symposium on Display Holography (ISDH 2018)&quot;.
 Preprint of the conference article can be downloaded 
@@ -81,90 +85,147 @@ display holography.&quot;
 In: <em>Proceedings of the 11th International Symposium on Display Holography</em>. 
 In press. 2018</p>
 </blockquote>
-<p>Check also <a href="http://holo.zcu.cz/cgdh_basics.html">holo.zcu.cz</a> for more information on computer 
-generated display holography.</p>
-<h2 id="requirements">Requirements</h2>
-<p>The main development platform is Octave (<a href="https://www.gnu.org/software/octave/">https://www.gnu.org/software/octave/</a>). 
+<p>Check also <a href="http://holo.zcu.cz/cgdh_basics.html">holo.zcu.cz</a> for more 
+information on computer generated display holography.</p>
+<h2>Requirements</h2>
+<p>The main development platform is Octave (https://www.gnu.org/software/octave/). 
 The code (.m files) is fully compatible with MATLAB. The code is also 
 provided in Scilab syntax (.sci and .sce files). </p>
-<p>The Octave code was developed in version 4.x. It was tested in version 4.4. 
-Version 4.2 should work fine.</p>
+<p>The Octave code was developed in version 4.x. It was thoroughly tested in version 4.4. 
+Version 4.2 should work fine. Version 5.X works fine a well.</p>
 <p>The code was tested in MATLAB R2017a. It should work with most MATLAB versions.</p>
-<p>The Scilab code was tested in version 6.0.1 (<a href="https://www.scilab.org/">https://www.scilab.org/</a>).
+<p>The Scilab code was tested in version 6.0.1 (https://www.scilab.org/).
 It <strong>requires</strong> module IPCV 1.2 (Image Processing and Computer Vision 
-Toolbox for Scilab, <a href="http://atoms.scilab.org/toolboxes/IPCV/1.2">http://atoms.scilab.org/toolboxes/IPCV/1.2</a>, 
-<a href="http://scilabipcv.tritytech.com">http://scilabipcv.tritytech.com</a>) for image loading and saving. </p>
-<h2 id="features">Features</h2>
+Toolbox for Scilab, http://atoms.scilab.org/toolboxes/IPCV/1.2, 
+http://scilabipcv.tritytech.com) for image loading and saving. </p>
+<h2>Features</h2>
 <p>CGDH Tools is built around demos. Currently available are:</p>
 <ul>
-<li><p>Propagation of light between parallel planes. Implemented methods are:</p>
+<li>
+<p>Propagation of light between parallel planes. Implemented methods are:</p>
 <ul>
-<li>convolution in the spatial domain (Rayleigh-Sommerfeld, Fresnel, etc.),</li><li>convolution in the frequency domain (angular spectrum, Fresnel, etc.),</li><li>Fourier transform based (Fresnel, Fraunhofer).</li></ul>
-</li><li><p>Simulation of a simple digital hologram recording and its reconstruction.
-Provided demos show hologram of an image and of a simple point cloud. 
-They also simulate a real image reconstruction as well as a photographing
-of a reconstructed virtual image.<br>The demos also show various hologram recording setups (on-axis, off-axis,
-lensless Fourier), hologram encoding methods (interference based, bipolar
-intensity, kinoform, etc.) and hologram manipulation (bleaching, 
-binarization).  </p>
-</li><li><p>Calculation of a &quot;layered hologram&quot;. A 3-D scene is decomposed to a set
-of parallel layers (billboards). The calculation solves hidden surface
-elimination.</p>
-</li><li><p>Hologram of a point cloud using a naive method and using a wavefront recording
-plane.</p>
-</li><li><p>Holographic stereogram of a point cloud. The demo allows to compare various
-approaches (basic, phase added stereogram - PAS, compensated phase added
-stereogram - CPAS, accurate phase added stereogram - APAS, accurate 
-compensated phase added stereogram - ACPAS).</p>
-</li><li><p>In addition, there are three self-contained demos (they do not use CGDH Tools
-functionality) that show basic procedures in computer generated display 
-holography.</p>
-</li></ul>
-<h2 id="example-output">Example output</h2>
+<li>convolution in the spatial domain (Rayleigh-Sommerfeld, Fresnel, etc.),</li>
+<li>convolution in the frequency domain (angular spectrum, Fresnel, etc.),</li>
+<li>Fourier transform based (Fresnel, Fraunhofer).</li>
+</ul>
+</li>
+<li>
+<p>Simulation of a simple digital hologram recording and its reconstruction.
+  Provided demos show hologram of an image and of a simple point cloud. 
+  They also simulate a real image reconstruction as well as a photographing
+  of a reconstructed virtual image.<br />
+  The demos also show various hologram recording setups (on-axis, off-axis,
+  lensless Fourier), hologram encoding methods (interference based, bipolar
+  intensity, kinoform, etc.) and hologram manipulation (bleaching, 
+  binarization).  
+</p>
+</li>
+<li>
+<p>Calculation of a &quot;layered hologram&quot;. A 3-D scene is decomposed to a set
+  of parallel layers (billboards). The calculation solves hidden surface
+  elimination.</p>
+</li>
+<li>
+<p>Hologram of a point cloud using a naive method and using a wavefront recording
+  plane.</p>
+</li>
+<li>
+<p>Holographic stereogram of a point cloud. The demo allows to compare various
+  approaches (basic, phase added stereogram - PAS, compensated phase added
+  stereogram - CPAS, accurate phase added stereogram - APAS, accurate 
+  compensated phase added stereogram - ACPAS).</p>
+</li>
+<li>
+<p>In addition, there are three self-contained demos (they do not use CGDH Tools
+  functionality) that show basic procedures in computer generated display 
+  holography.</p>
+</li>
+</ul>
+<h2>Example output</h2>
 <p>Following images were calculated using Octave 4.4.0. They show a geometrical
 image of a layered scene (stack of three parallel billboards), their
 off-axis hologram encoded with bipolar intensity scheme, and its real image
 reconstruction.</p>
-<p><img src="example_output/layered-fig1.png" alt=""><br><em>The scene and its reconstruction from a hologram</em></p>
-<p><img src="example_output/layered-fig2.png" alt=""><br><em>The calculated hologram</em></p>
-<h2 id="structure">Structure</h2>
+<p><img src="example_output/layered-fig1.png" /><br />
+<em>The scene and its reconstruction from a hologram</em></p>
+<p><img src="example_output/layered-fig2.png" /><br />
+<em>The calculated hologram</em></p>
+<h2>Structure</h2>
 <p>The demos are located in the numbered folders. It is recommended to explore them
 in that order. The core functionality is in the folder <code>cgdhtools</code>.</p>
 <ul>
-<li><p><code>01_standalone_demos</code><br>Three standalone demos that do not use CGDH Tools functionality. Those that
-have little experience with computational Fourier optics should explore them
-first as they directly show the calculations. In the other demos, most 
-calculations are &quot;hidden&quot; in the functions of CGDH Tolls.</p>
-</li><li><p><code>02_simple_examples</code><br>The basic usage of CGDH Tools. The demos are as short as possible. 
-It is highly recommended to explore these demos first.</p>
-</li><li><p><code>03_demo_basic_functions</code><br>Computational Fourier optics uses many special complex valued functions. This
-demo allows to explore them. It is quite safe to skip this demo if you are
-not interested in calculation details.</p>
-</li><li><p><code>04_demo_propagation</code><br>Examples of light propagation between parallel planes. As light propagation 
-simulation is an ubiquitous part of computational Fourier optics and
-computational holography, it is highly recommended to explore these demos.</p>
-</li><li><p><code>05_demo_digital_hologram</code><br>Simulation of recording a digital hologram of a flat image and of a simple 
-point cloud. The demos show how to reconstruct a real image and how to take
-a photograph of a virtual image. Moreover, it is possible to compare
-various hologram recording setups (on-axis, off-axis, lensless Fourier), 
-hologram encoding methods (classical interference based, bipolar intensity,
-kinoform, etc.) and hologram processing (binarization, bleaching). Finally, 
-there is a demo that calculates a diffractive optical element (DOE) that 
-projects an image to a specified distance.  </p>
-</li><li><p><code>06_demo_layered_hologram</code><br>Hologram of a layered scene (scene decomposed to a stack of parallel 
-billboards). The demo shows the simplest method how to handle visibility. </p>
-</li><li><p><code>07_demo_hologramPointCloud</code><br>Hologram of a point cloud. The demo allows to compare speed of the naive 
-calculation and the calculation using a wavefront recording plane. </p>
-</li><li><p><code>08_demo_stereogram</code><br>Calculation of a holographic stereogram. The demo allows to compare various
-approaches (basic, phase added stereogram - PAS, compensated phase added
-stereogram - CPAS, accurate phase added stereogram - APAS, accurate 
-compensated phase added stereogram - ACPAS).</p>
-</li><li><p><code>cgdhtools</code><br>The core functionality.</p>
-</li><li><p><code>development</code><br>Utilities used in CGDH Tools development </p>
-</li><li><p><code>example_output</code><br>The images that were referenced in the section Example output.</p>
-</li><li><p><code>images</code><br>Some input images that are used in the demos.</p>
-</li></ul>
-
+<li>
+<p><code>01_standalone_demos</code><br />
+  Three standalone demos that do not use CGDH Tools functionality. Those that
+  have little experience with computational Fourier optics should explore them
+  first as they directly show the calculations. In the other demos, most 
+  calculations are &quot;hidden&quot; in the functions of CGDH Tolls.</p>
+</li>
+<li>
+<p><code>02_simple_examples</code><br />
+  The basic usage of CGDH Tools. The demos are as short as possible. 
+  It is highly recommended to explore these demos first.</p>
+</li>
+<li>
+<p><code>03_demo_basic_functions</code><br />
+  Computational Fourier optics uses many special complex valued functions. This
+  demo allows to explore them. It is quite safe to skip this demo if you are
+  not interested in calculation details.</p>
+</li>
+<li>
+<p><code>04_demo_propagation</code><br />
+  Examples of light propagation between parallel planes. As light propagation 
+  simulation is an ubiquitous part of computational Fourier optics and
+  computational holography, it is highly recommended to explore these demos.</p>
+</li>
+<li>
+<p><code>05_demo_digital_hologram</code><br />
+  Simulation of recording a digital hologram of a flat image and of a simple 
+  point cloud. The demos show how to reconstruct a real image and how to take
+  a photograph of a virtual image. Moreover, it is possible to compare
+  various hologram recording setups (on-axis, off-axis, lensless Fourier), 
+  hologram encoding methods (classical interference based, bipolar intensity,
+  kinoform, etc.) and hologram processing (binarization, bleaching). Finally, 
+  there is a demo that calculates a diffractive optical element (DOE) that 
+  projects an image to a specified distance.  
+</p>
+</li>
+<li>
+<p><code>06_demo_layered_hologram</code><br />
+  Hologram of a layered scene (scene decomposed to a stack of parallel 
+  billboards). The demo shows the simplest method how to handle visibility. </p>
+</li>
+<li>
+<p><code>07_demo_hologramPointCloud</code><br />
+  Hologram of a point cloud. The demo allows to compare speed of the naive 
+  calculation and the calculation using a wavefront recording plane. </p>
+</li>
+<li>
+<p><code>08_demo_stereogram</code><br />
+  Calculation of a holographic stereogram. The demo allows to compare various
+  approaches (basic, phase added stereogram - PAS, compensated phase added
+  stereogram - CPAS, accurate phase added stereogram - APAS, accurate 
+  compensated phase added stereogram - ACPAS).</p>
+</li>
+<li>
+<p><code>cgdhtools</code><br />
+  The core functionality.</p>
+</li>
+<li>
+<p><code>development</code><br />
+  Utilities used in CGDH Tools development </p>
+</li>
+<li>
+<p><code>example_output</code><br />
+  The images that were referenced in the section Example output.</p>
+</li>
+<li>
+<p><code>images</code><br />
+  Some input images that are used in the demos.</p>
+</li>
+</ul>
+</div>
+</div>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
